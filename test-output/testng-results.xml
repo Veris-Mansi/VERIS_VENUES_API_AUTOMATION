@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="27" passed="27">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="49594" started-at="2019-06-02T18:55:18Z" finished-at="2019-06-02T18:56:07Z">
+    <groups>
+      <group name="Permissions">
+        <method signature="CompleteVenueTesting.MapAdminandVenue()[pri:13, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="MapAdminandVenue" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.grpinvalidOrganization()[pri:8, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="grpinvalidOrganization" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.grpinvalidToken()[pri:9, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="grpinvalidToken" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.invalidGroup()[pri:11, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidGroup" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.invalidRoles()[pri:12, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidRoles" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.invalidVenue()[pri:10, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidVenue" class="VenuesAutomation.CompleteVenueTesting"/>
+      </group> <!-- Permissions -->
+      <group name="MapAdminWithVenue">
+        <method signature="MapAdminWithVenue.MappingVenue()[pri:4, instance:VenuesAutomation.MapAdminWithVenue@43c67247]" name="MappingVenue" class="VenuesAutomation.MapAdminWithVenue"/>
+        <method signature="MapAdminWithVenue.mapinvalidOrganization()[pri:1, instance:VenuesAutomation.MapAdminWithVenue@43c67247]" name="mapinvalidOrganization" class="VenuesAutomation.MapAdminWithVenue"/>
+        <method signature="MapAdminWithVenue.mapinvalidToken()[pri:2, instance:VenuesAutomation.MapAdminWithVenue@43c67247]" name="mapinvalidToken" class="VenuesAutomation.MapAdminWithVenue"/>
+        <method signature="MapAdminWithVenue.mapinvalidVenue()[pri:3, instance:VenuesAutomation.MapAdminWithVenue@43c67247]" name="mapinvalidVenue" class="VenuesAutomation.MapAdminWithVenue"/>
+        <method signature="CompleteVenueTesting.MappingVenue()[pri:7, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="MappingVenue" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.mapinvalidOrganization()[pri:4, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="mapinvalidOrganization" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.mapinvalidToken()[pri:5, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="mapinvalidToken" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.mapinvalidVenue()[pri:6, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="mapinvalidVenue" class="VenuesAutomation.CompleteVenueTesting"/>
+      </group> <!-- MapAdminWithVenue -->
+      <group name="EnableInviteforGrpmembers">
+        <method signature="CompleteVenueTesting.enableInviteGroup()[pri:17, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="enableInviteGroup" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.inviteinvalidGroup()[pri:16, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="inviteinvalidGroup" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.inviteinvalidOrganization()[pri:14, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="inviteinvalidOrganization" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.inviteinvalidToken()[pri:15, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="inviteinvalidToken" class="VenuesAutomation.CompleteVenueTesting"/>
+      </group> <!-- EnableInviteforGrpmembers -->
+      <group name="portalLogin">
+        <method signature="CompleteVenueTesting.portalLogin()[pri:0, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="portalLogin" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="portalLogin.invalidUserportalLogin()[pri:0, instance:VenuesAutomation.portalLogin@6b9267b]" name="invalidUserportalLogin" class="VenuesAutomation.portalLogin"/>
+        <method signature="portalLogin.portalLogin()[pri:0, instance:VenuesAutomation.portalLogin@6b9267b]" name="portalLogin" class="VenuesAutomation.portalLogin"/>
+      </group> <!-- portalLogin -->
+      <group name="addVenue">
+        <method signature="CreateVenue.addVenue()[pri:0, instance:VenuesAutomation.CreateVenue@15bcf458]" name="addVenue" class="VenuesAutomation.CreateVenue"/>
+        <method signature="CreateVenue.invalidOrganization()[pri:0, instance:VenuesAutomation.CreateVenue@15bcf458]" name="invalidOrganization" class="VenuesAutomation.CreateVenue"/>
+        <method signature="CreateVenue.invalidToken()[pri:0, instance:VenuesAutomation.CreateVenue@15bcf458]" name="invalidToken" class="VenuesAutomation.CreateVenue"/>
+        <method signature="CompleteVenueTesting.addVenue()[pri:1, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="addVenue" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.invalidOrganization()[pri:2, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidOrganization" class="VenuesAutomation.CompleteVenueTesting"/>
+        <method signature="CompleteVenueTesting.invalidToken()[pri:3, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidToken" class="VenuesAutomation.CompleteVenueTesting"/>
+      </group> <!-- addVenue -->
+    </groups>
+    <test name="Default test" duration-ms="49594" started-at="2019-06-02T18:55:18Z" finished-at="2019-06-02T18:56:07Z">
+      <class name="VenuesAutomation.CompleteVenueTesting">
+        <test-method status="PASS" signature="portalLogin()[pri:0, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="portalLogin" duration-ms="1716" started-at="2019-06-03T00:25:30Z" finished-at="2019-06-03T00:25:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- portalLogin -->
+        <test-method status="PASS" signature="addVenue()[pri:1, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="addVenue" duration-ms="2682" depends-on-groups="portalLogin" started-at="2019-06-03T00:25:31Z" finished-at="2019-06-03T00:25:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addVenue -->
+        <test-method status="PASS" signature="invalidOrganization()[pri:2, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidOrganization" duration-ms="1595" depends-on-groups="portalLogin" started-at="2019-06-03T00:25:36Z" finished-at="2019-06-03T00:25:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidOrganization -->
+        <test-method status="PASS" signature="invalidToken()[pri:3, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidToken" duration-ms="1547" depends-on-groups="portalLogin" started-at="2019-06-03T00:25:39Z" finished-at="2019-06-03T00:25:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidToken -->
+        <test-method status="PASS" signature="mapinvalidOrganization()[pri:4, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="mapinvalidOrganization" duration-ms="1566" depends-on-groups="addVenue" started-at="2019-06-03T00:25:42Z" finished-at="2019-06-03T00:25:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mapinvalidOrganization -->
+        <test-method status="PASS" signature="mapinvalidToken()[pri:5, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="mapinvalidToken" duration-ms="1538" depends-on-groups="addVenue" started-at="2019-06-03T00:25:47Z" finished-at="2019-06-03T00:25:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mapinvalidToken -->
+        <test-method status="PASS" signature="mapinvalidVenue()[pri:6, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="mapinvalidVenue" duration-ms="1572" depends-on-groups="addVenue" started-at="2019-06-03T00:25:48Z" finished-at="2019-06-03T00:25:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mapinvalidVenue -->
+        <test-method status="PASS" signature="MappingVenue()[pri:7, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="MappingVenue" duration-ms="1633" depends-on-groups="addVenue" started-at="2019-06-03T00:25:50Z" finished-at="2019-06-03T00:25:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MappingVenue -->
+        <test-method status="PASS" signature="grpinvalidOrganization()[pri:8, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="grpinvalidOrganization" duration-ms="1560" depends-on-groups="MapAdminWithVenue" started-at="2019-06-03T00:25:51Z" finished-at="2019-06-03T00:25:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- grpinvalidOrganization -->
+        <test-method status="PASS" signature="grpinvalidToken()[pri:9, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="grpinvalidToken" duration-ms="1516" depends-on-groups="MapAdminWithVenue" started-at="2019-06-03T00:25:53Z" finished-at="2019-06-03T00:25:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- grpinvalidToken -->
+        <test-method status="PASS" signature="invalidVenue()[pri:10, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidVenue" duration-ms="1565" depends-on-groups="MapAdminWithVenue" started-at="2019-06-03T00:25:54Z" finished-at="2019-06-03T00:25:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidVenue -->
+        <test-method status="PASS" signature="invalidGroup()[pri:11, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidGroup" duration-ms="1561" depends-on-groups="MapAdminWithVenue" started-at="2019-06-03T00:25:56Z" finished-at="2019-06-03T00:25:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidGroup -->
+        <test-method status="PASS" signature="invalidRoles()[pri:12, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="invalidRoles" duration-ms="1581" depends-on-groups="MapAdminWithVenue" started-at="2019-06-03T00:25:58Z" finished-at="2019-06-03T00:25:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidRoles -->
+        <test-method status="PASS" signature="MapAdminandVenue()[pri:13, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="MapAdminandVenue" duration-ms="1704" depends-on-groups="MapAdminWithVenue" started-at="2019-06-03T00:25:59Z" finished-at="2019-06-03T00:26:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MapAdminandVenue -->
+        <test-method status="PASS" signature="inviteinvalidOrganization()[pri:14, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="inviteinvalidOrganization" duration-ms="1580" depends-on-groups="Permissions" started-at="2019-06-03T00:26:01Z" finished-at="2019-06-03T00:26:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inviteinvalidOrganization -->
+        <test-method status="PASS" signature="inviteinvalidToken()[pri:15, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="inviteinvalidToken" duration-ms="1549" depends-on-groups="Permissions" started-at="2019-06-03T00:26:02Z" finished-at="2019-06-03T00:26:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inviteinvalidToken -->
+        <test-method status="PASS" signature="inviteinvalidGroup()[pri:16, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="inviteinvalidGroup" duration-ms="1659" depends-on-groups="Permissions" started-at="2019-06-03T00:26:04Z" finished-at="2019-06-03T00:26:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inviteinvalidGroup -->
+        <test-method status="PASS" signature="enableInviteGroup()[pri:17, instance:VenuesAutomation.CompleteVenueTesting@5af9926a]" name="enableInviteGroup" duration-ms="1551" depends-on-groups="Permissions" started-at="2019-06-03T00:26:06Z" finished-at="2019-06-03T00:26:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enableInviteGroup -->
+      </class> <!-- VenuesAutomation.CompleteVenueTesting -->
+      <class name="VenuesAutomation.MapAdminWithVenue">
+        <test-method status="PASS" signature="mapinvalidOrganization()[pri:1, instance:VenuesAutomation.MapAdminWithVenue@43c67247]" name="mapinvalidOrganization" duration-ms="1577" started-at="2019-06-03T00:25:34Z" finished-at="2019-06-03T00:25:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mapinvalidOrganization -->
+        <test-method status="PASS" signature="mapinvalidToken()[pri:2, instance:VenuesAutomation.MapAdminWithVenue@43c67247]" name="mapinvalidToken" duration-ms="1580" started-at="2019-06-03T00:25:37Z" finished-at="2019-06-03T00:25:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mapinvalidToken -->
+        <test-method status="PASS" signature="mapinvalidVenue()[pri:3, instance:VenuesAutomation.MapAdminWithVenue@43c67247]" name="mapinvalidVenue" duration-ms="1588" started-at="2019-06-03T00:25:40Z" finished-at="2019-06-03T00:25:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mapinvalidVenue -->
+        <test-method status="PASS" signature="MappingVenue()[pri:4, instance:VenuesAutomation.MapAdminWithVenue@43c67247]" name="MappingVenue" duration-ms="3065" started-at="2019-06-03T00:25:43Z" finished-at="2019-06-03T00:25:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MappingVenue -->
+      </class> <!-- VenuesAutomation.MapAdminWithVenue -->
+      <class name="VenuesAutomation.portalLogin">
+        <test-method status="PASS" signature="invalidUserportalLogin()[pri:0, instance:VenuesAutomation.portalLogin@6b9267b]" name="invalidUserportalLogin" duration-ms="1616" started-at="2019-06-03T00:25:18Z" finished-at="2019-06-03T00:25:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidUserportalLogin -->
+        <test-method status="PASS" signature="portalLogin()[pri:0, instance:VenuesAutomation.portalLogin@6b9267b]" name="portalLogin" duration-ms="1742" started-at="2019-06-03T00:25:19Z" finished-at="2019-06-03T00:25:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- portalLogin -->
+      </class> <!-- VenuesAutomation.portalLogin -->
+      <class name="VenuesAutomation.CreateVenue">
+        <test-method status="PASS" signature="addVenue()[pri:0, instance:VenuesAutomation.CreateVenue@15bcf458]" name="addVenue" duration-ms="5384" started-at="2019-06-03T00:25:21Z" finished-at="2019-06-03T00:25:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addVenue -->
+        <test-method status="PASS" signature="invalidOrganization()[pri:0, instance:VenuesAutomation.CreateVenue@15bcf458]" name="invalidOrganization" duration-ms="1588" started-at="2019-06-03T00:25:26Z" finished-at="2019-06-03T00:25:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidOrganization -->
+        <test-method status="PASS" signature="invalidToken()[pri:0, instance:VenuesAutomation.CreateVenue@15bcf458]" name="invalidToken" duration-ms="1578" started-at="2019-06-03T00:25:28Z" finished-at="2019-06-03T00:25:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidToken -->
+      </class> <!-- VenuesAutomation.CreateVenue -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
