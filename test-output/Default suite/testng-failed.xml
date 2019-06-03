@@ -3,11 +3,21 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="VenuesAutomation.EnableInviteforGrpmembers">
+      <class name="VenuesAutomation.CompleteVenueTesting">
         <methods>
-          <include name="inviteinvalidToken"/>
+          <include name="GroupVenuePermission"/>
+          <include name="invalidGroup"/>
+          <include name="invalidRoles"/>
+          <include name="MappingVenue"/>
+          <include name="grpinvalidOrganization"/>
+          <include name="mapinvalidOrganization"/>
+          <include name="grpinvalidToken"/>
+          <include name="addVenue"/>
+          <include name="mapinvalidVenue"/>
+          <include name="mapinvalidToken"/>
+          <include name="invalidVenue"/>
         </methods>
-      </class> <!-- VenuesAutomation.EnableInviteforGrpmembers -->
+      </class> <!-- VenuesAutomation.CompleteVenueTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
