@@ -13,26 +13,26 @@ import io.restassured.response.Response;
 
 public class CompleteVenueTesting {
 
-	String token="";
+	String token=ResourcesPortalLogin.portalLogin();
 	String invalid_token="19fbca94eb937121ee1446d164b851b9d13f04a";
 	String venue_id="";
-	String grp_id="50";
+	String grp_id="56";
 	String roles="6";
-	
-	@Test(priority=0,groups="portalLogin")
-	public void portalLogin()
-	{
-		token=ResourcesPortalLogin.portalLogin();
-		System.out.println(token);
-	}
-	
-	@Test(priority=1,groups="addVenue",dependsOnGroups="portalLogin")
+//	
+//	@Test(priority=0,groups="portalLogin")
+//	public void portalLogin()
+//	{
+//		token=ResourcesPortalLogin.portalLogin();
+//		System.out.println(token);
+//	}
+//	
+	@Test(priority=1,groups="addVenue")
 	public void addVenue()
 	{
 		venue_id=ResourceVenues.addVenue(token);
 	}
 	
-	@Test(priority=2,groups="addVenue",dependsOnGroups="portalLogin")
+	@Test(priority=2,groups="addVenue")
 	public void invalidOrganization()
 
 	{
@@ -42,57 +42,57 @@ public class CompleteVenueTesting {
 		when().post("/api/v1/add-org-venue/6000/").
 		then().assertThat().statusCode(403).and().body("detail", equalTo("You do not have permission to perform this action.")).extract().response();
 	}
-	@Test(priority=3,groups="addVenue",dependsOnGroups="portalLogin")
+	@Test(priority=3,groups="addVenue")
 	public void invalidToken()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 		headers("Content-Type","application/json").headers("Authorization","token "+invalid_token).
-		when().post("/api/v1/add-org-venue/6/").
+		when().post("/api/v1/add-org-venue/11/").
 		then().assertThat().statusCode(401).and().body("detail", equalTo("Invalid token.")).extract().response();
 	}
-	@Test(priority=4,groups="MapAdminWithVenue",dependsOnGroups="addVenue")
+	@Test(priority=4,groups="MapAdminWithVenue",dependsOnMethods="addVenue")
 	public void mapinvalidOrganization()
 
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 		headers("Content-Type","application/json").headers("Authorization","token "+token).
-		when().post("/api/v1/map-venue-admin/2599/").
+		when().post("/api/v1/map-venue-admin/11111/").
 		then().assertThat().statusCode(403).and().body("detail", equalTo("You do not have permission to perform this action.")).extract().response();
 	}
-	@Test(priority=5,groups="MapAdminWithVenue",dependsOnGroups="addVenue")
+	@Test(priority=5,groups="MapAdminWithVenue",dependsOnMethods="addVenue")
 	public void mapinvalidToken()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 		headers("Content-Type","application/json").headers("Authorization","token "+invalid_token).
-		when().post("/api/v1/map-venue-admin/6/").
+		when().post("/api/v1/map-venue-admin/11/").
 		then().assertThat().statusCode(401).and().body("detail", equalTo("Invalid token.")).extract().response();
 	}
-	@Test(priority=6,groups="MapAdminWithVenue",dependsOnGroups="addVenue")
+	@Test(priority=6,groups="MapAdminWithVenue",dependsOnMethods="addVenue")
 	public void mapinvalidVenue()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 		formParam("venue", "222").
 		headers("Authorization","token "+token).
-		when().post("/api/v1/map-venue-admin/6/").
+		when().post("/api/v1/map-venue-admin/11/").
 		then().assertThat().statusCode(404).and().body("detail", equalTo("Not found.")).extract().response();
 	}
-	@Test(priority=7,groups="MapAdminWithVenue",dependsOnGroups="addVenue")
+	@Test(priority=7,groups="MapAdminWithVenue",dependsOnMethods="addVenue")
 	public void MappingVenue()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().urlEncodingEnabled(true).
 		formParam("venue", venue_id).
 		headers("Authorization","token "+token).
-		when().post("/api/v1/map-venue-admin/6/").
+		when().post("/api/v1/map-venue-admin/11/").
 		then().assertThat().statusCode(200).and().body("detail", equalTo("Venue with admin role to Successfully mapped.")).extract().response();
 		String response = res.asString();
 		System.out.println("Response is "+response);
 	}
-	@Test(priority=8,groups="Permissions",dependsOnGroups="MapAdminWithVenue")
+	@Test(priority=8,groups="Permissions",dependsOnMethods="MappingVenue")
 	public void grpinvalidOrganization()
 
 	{
@@ -101,16 +101,16 @@ public class CompleteVenueTesting {
 		when().post("/api/v1/map-group-venue-perm/6000/").
 		then().assertThat().statusCode(403).and().body("detail", equalTo("You do not have permission to perform this action.")).extract().response();
 	}
-	@Test(priority=9,groups="Permissions",dependsOnGroups="MapAdminWithVenue")
+	@Test(priority=9,groups="Permissions",dependsOnMethods="MappingVenue")
 	public void grpinvalidToken()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 		headers("Authorization","token "+invalid_token).
-		when().post("/api/v1/map-group-venue-perm/6/").
+		when().post("/api/v1/map-group-venue-perm/11/").
 		then().assertThat().statusCode(401).and().body("detail", equalTo("Invalid token.")).extract().response();
 	}
-	@Test(priority=10,groups="Permissions",dependsOnGroups="MapAdminWithVenue")
+	@Test(priority=10,groups="Permissions",dependsOnMethods="MappingVenue")
 	public void invalidVenue()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
@@ -118,10 +118,10 @@ public class CompleteVenueTesting {
 		formParam("venues", "222").
 		formParam("groups",grp_id).
 		headers("Authorization","token "+token).
-		when().post("/api/v1/map-group-venue-perm/6/").
+		when().post("/api/v1/map-group-venue-perm/11/").
 		then().assertThat().statusCode(403).and().body("detail", equalTo("You do not have permission to perform this action.")).extract().response();
 	}
-	@Test(priority=11,groups="Permissions",dependsOnGroups="MapAdminWithVenue")
+	@Test(priority=11,groups="Permissions",dependsOnMethods="MappingVenue")
 	public void invalidGroup()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
@@ -130,10 +130,10 @@ public class CompleteVenueTesting {
 		formParam("roles",roles).
 		formParam("groups","888").
 		headers("Authorization","token "+token).
-		when().post("/api/v1/map-group-venue-perm/6/").
+		when().post("/api/v1/map-group-venue-perm/11/").
 		then().assertThat().statusCode(403).and().body("detail", equalTo("You do not have permission to perform this action.")).extract().response();
 	}
-	@Test(priority=12,groups="Permissions",dependsOnGroups="MapAdminWithVenue")
+	@Test(priority=12,groups="Permissions",dependsOnMethods="MappingVenue")
 	public void invalidRoles()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
@@ -142,11 +142,11 @@ public class CompleteVenueTesting {
 		formParam("roles","10").
 		formParam("groups",grp_id).
 		headers("Authorization","token "+token).
-		when().post("/api/v1/map-group-venue-perm/6/").
+		when().post("/api/v1/map-group-venue-perm/11/").
 		then().assertThat().statusCode(403).and().body("detail", equalTo("You do not have permission to perform this action.")).extract().response();
 	}
-	@Test(priority=13,groups="Permissions",dependsOnGroups="MapAdminWithVenue")
-	public void MapAdminandVenue()
+	@Test(priority=13,groups="Permissions",dependsOnMethods="MappingVenue")
+	public void GroupVenuePermission()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().urlEncodingEnabled(true).
@@ -154,12 +154,12 @@ public class CompleteVenueTesting {
 		formParam("venues", venue_id).
 		formParam("groups",grp_id).
 		headers("Authorization","token "+token).
-		when().post("api/v1/map-group-venue-perm/6/").
+		when().post("api/v1/map-group-venue-perm/11/").
 		then().assertThat().statusCode(200).and().body("detail", equalTo("Mapping sucessfully Done.")).extract().response();
 		String response = res.asString();
 		System.out.println("Response is "+response);
 	}
-	@Test(priority=14,groups="EnableInviteforGrpmembers",dependsOnGroups="Permissions")
+	@Test(priority=14,groups="EnableInviteforGrpmembers")
 	public void inviteinvalidOrganization()
 
 	{
@@ -169,33 +169,33 @@ public class CompleteVenueTesting {
 		when().post("/api/v1/map-user-group-venue-perm/60000/").
 		then().assertThat().statusCode(403).and().body("detail", equalTo("You do not have permission to perform this action.")).extract().response();
 	}
-	@Test(priority=15,groups="EnableInviteforGrpmembers",dependsOnGroups="Permissions")
+	@Test(priority=15,groups="EnableInviteforGrpmembers")
 	public void inviteinvalidToken()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().formParam("groups", grp_id).headers("Authorization","token "+invalid_token).
-		when().post("/api/v1/map-user-group-venue-perm/6/").
+		when().post("/api/v1/map-user-group-venue-perm/11/").
 		then().assertThat().statusCode(401).and().body("detail", equalTo("Invalid token.")).extract().response();
 	}
-	@Test(priority=16,groups="EnableInviteforGrpmembers",dependsOnGroups="Permissions")
+	@Test(priority=16,groups="EnableInviteforGrpmembers")
 	public void inviteinvalidGroup()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 				formParam("groups", "1234").
-				headers("Authorization","token "+token).when().post("/api/v1/map-user-group-venue-perm/6/").
+				headers("Authorization","token "+token).when().post("/api/v1/map-user-group-venue-perm/11/").
 		then().assertThat().statusCode(403).and().body("detail", equalTo("You do not have permission to perform this action.")).extract().response();
 		String response = res.asString();
 		System.out.println("Response is "+response);
 
 	}
-	@Test(priority=17,groups="EnableInviteforGrpmembers",dependsOnGroups="Permissions")
+	@Test(priority=4,groups="EnableInviteforGrpmembers")
 	public void enableInviteGroup()
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 				formParam("groups", grp_id).
-				headers("Authorization","token "+token).when().post("/api/v1/map-user-group-venue-perm/6/").
+				headers("Authorization","token "+token).when().post("/api/v1/map-user-group-venue-perm/11/").
 		then().assertThat().statusCode(200).and().body("detail", equalTo("Mapping sucessfully Done.")).extract().response();
 		String response = res.asString();
 		System.out.println("Response is "+response);

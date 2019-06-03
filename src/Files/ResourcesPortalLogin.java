@@ -14,8 +14,8 @@ public class ResourcesPortalLogin {
 
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().urlEncodingEnabled(true)
-	            .param("username", "mansi.sahu@veris.in")
-	            .param("password", "ttpl@12345").
+	            .param("username", "testveris19@gmail.com")
+	            .param("password", "Veris@12345").
 	            when().post("/api/v1/portal-login/").then().
 	            assertThat().statusCode(200).and().body("valid", equalTo(1)).extract().response();
 		String response=res.asString();

@@ -15,7 +15,7 @@ public class ResourceVenues {
 		Response res =given().
 		headers("Content-Type","application/json").headers("Authorization","token "+token).
 		body(PayloadDataVenue.addingVenue()).
-		when().post("/api/v1/add-org-venue/6/").
+		when().post("/api/v1/add-org-venue/11/").
 		then().assertThat().statusCode(200).and().body("detail", equalTo("Organisation Venue successfully added.")).extract().response();
 		String response = res.asString();
 		JsonPath path = new JsonPath(response);

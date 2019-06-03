@@ -11,8 +11,9 @@ import io.restassured.response.Response;
 public class EnableInviteforGrpmembers {
 
 	String token=ResourcesPortalLogin.portalLogin();
+	
 	String invalid_token="85e0ca6032acc5da7a6bd9682ee9fa11026dab5";
-	String grp_id="50";
+	String grp_id="56";
 	
 	@Test(priority=1,groups="EnableInviteforGrpmembers")
 	public void inviteinvalidOrganization()
@@ -29,7 +30,7 @@ public class EnableInviteforGrpmembers {
 	{
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().formParam("groups", grp_id).headers("Authorization","token "+invalid_token).
-		when().post("/api/v1/map-user-group-venue-perm/6/").
+		when().post("/api/v1/map-user-group-venue-perm/11/").
 		then().assertThat().statusCode(401).and().body("detail", equalTo("Invalid token.")).extract().response();
 	}
 	@Test(priority=3,groups="EnableInviteforGrpmembers")
@@ -38,7 +39,7 @@ public class EnableInviteforGrpmembers {
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 				formParam("groups", "1234").
-				headers("Authorization","token "+token).when().post("/api/v1/map-user-group-venue-perm/6/").
+				headers("Authorization","token "+token).when().post("/api/v1/map-user-group-venue-perm/11/").
 		then().assertThat().statusCode(403).and().body("detail", equalTo("You do not have permission to perform this action.")).extract().response();
 		String response = res.asString();
 		System.out.println("Response is "+response);
@@ -50,7 +51,7 @@ public class EnableInviteforGrpmembers {
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 				formParam("groups", grp_id).
-				headers("Authorization","token "+token).when().post("/api/v1/map-user-group-venue-perm/6/").
+				headers("Authorization","token "+token).when().post("/api/v1/map-user-group-venue-perm/11/").
 		then().assertThat().statusCode(200).and().body("detail", equalTo("Mapping sucessfully Done.")).extract().response();
 		String response = res.asString();
 		System.out.println("Response is "+response);

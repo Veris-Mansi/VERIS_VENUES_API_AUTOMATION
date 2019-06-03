@@ -11,9 +11,10 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class CreateVenue {
-	static String token=ResourcesPortalLogin.portalLogin();
+	String token=ResourcesPortalLogin.portalLogin();
 	String invalid_token="19fbca94eb937121ee1446d164b851b9d13f04a";
 	String venue_id="";
+	
 	
 	@Test(groups="addVenue")
 	public void addVenue()
@@ -37,7 +38,7 @@ public class CreateVenue {
 		RestAssured.baseURI="https://sandbox.veris.in";
 		Response res =given().
 		headers("Content-Type","application/json").headers("Authorization","token "+invalid_token).
-		when().post("/api/v1/add-org-venue/6/").
+		when().post("/api/v1/add-org-venue/11/").
 		then().assertThat().statusCode(401).and().body("detail", equalTo("Invalid token.")).extract().response();
 	}
 }
